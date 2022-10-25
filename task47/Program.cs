@@ -27,11 +27,13 @@ bool IsNumberValid(int number)
 double[,] CreateArray(int n, int m)
 {
     double[,] array = new double[n, m];
+    int x = new Random().Next(1, 100);
+    int y = new Random().Next(1, 100);
     for (int row = 0; row < array.GetLength(0); row++)
     {
         for (int col = 0; col < array.GetLength(1); col++)
         {
-            array[row, col] = Math.Round(new Random().NextDouble() * 100, 2);
+            array[row, col] = Math.Round((new Random().NextDouble() * x - new Random().NextDouble() * y), 2);
         }
     }
     return array;
